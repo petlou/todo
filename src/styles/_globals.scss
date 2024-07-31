@@ -1,0 +1,100 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+	scrollbar-width: auto;
+	scrollbar-color: var(--dark) var(--light);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--light);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--dark);
+	border-radius: 10px;
+	border: 3px solid var(--light);
+}
+
+:root {
+	--purple: #8284fa;
+	--purple-dark: #5e60ce;
+	--blue: #4ea8de;
+	--blue-dark: #1e6f9f;
+
+	--gray-700: #0d0d0d;
+	--gray-600: #1a1a1a;
+	--gray-500: #262626;
+	--gray-400: #333333;
+	--gray-300: #808080;
+	--gray-200: #d9d9d9;
+	--gray-100: #f2f2f2;
+
+	--danger: #e25858;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-family: 'Inter', sans-serif;
+	line-height: 140%;
+}
+
+@media (max-width: 1080px) {
+	html {
+		font-size: 93.75%;
+	}
+}
+
+@media (max-width: 720px) {
+	html {
+		font-size: 87.5%;
+	}
+}
+
+body {
+	background-color: var(--gray-600);
+	color: var(--gray-100);
+}
+
+body,
+input,
+textarea,
+select,
+button {
+	font-size: 0.875rem;
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+button {
+	cursor: pointer;
+	border: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px #f9f9f9 inset !important;
+}
