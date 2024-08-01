@@ -18,6 +18,11 @@ export const CardContainer = styled.div`
 	p {
 		flex: 1;
 		font-size: 0.875rem;
+
+		&.selected {
+			text-decoration: line-through;
+			color: var(--gray-300);
+		}
 	}
 
 	img:hover {

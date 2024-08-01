@@ -1,20 +1,24 @@
+import { ITasks } from '../Body'
 import { TrashIcon } from '../Trash'
 
 import { CardContainer, CheckBoxContainer } from './style'
 
 interface CardsProps {
-	task: string
+	index: number
+	task: ITasks
+	removeTask: (index: number) => void
+	selectTask: (index: number) => void
 }
 
-export function Cards({ task }: CardsProps) {
+export function Cards({ index, task, removeTask, selectTask }: CardsProps) {
 	return (
 		<CardContainer>
 			<CheckBoxContainer>
-				<input type='checkbox' />
+				<input type='checkbox' onChange={() => selectTask(index)} />
 				<span className='checkmark'></span>
-				<p>{task}</p>
+				<p className={task.isSelected ? 'selected' : ''}>{task.name}</p>
 			</CheckBoxContainer>
-			<TrashIcon onClick={() => console.log('Click => ', task)} />
+			<TrashIcon onClick={() => removeTask(index)} />
 		</CardContainer>
 	)
 }

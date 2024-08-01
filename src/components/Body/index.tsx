@@ -4,16 +4,30 @@ import { Tasks } from '../Tasks'
 
 import { Container } from './style'
 
-export function Body() {
-	const [tasks, setTasks] = useState<string[]>([])
+export interface ITasks {
+	name: string
+	isSelected: boolean
+}
 
-	function handleSubmit(task: string) {
-		setTasks(prev => [...prev, task])
+export function Body() {
+	const [tasks, setTasks] = useState<ITasks[]>([])
+
+	function handleCreateTask(task: string) {
+		if (!task) return
+
+		setTasks(prev => [
+			...prev,
+			{
+				name: task,
+				isSelected: false,
+			},
+		])
 	}
+
 	return (
 		<Container>
-			<Input onSubmit={handleSubmit} />
-			<Tasks tasks={tasks} />
+			<Input onSubmit={handleCreateTask} />
+			<Tasks tasks={tasks} changeTasks={setTasks} />
 		</Container>
 	)
 }
