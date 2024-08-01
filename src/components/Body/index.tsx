@@ -1,15 +1,19 @@
+import { useState } from 'react'
 import { Input } from '../Input'
 import { Tasks } from '../Tasks'
+
 import { Container } from './style'
 
 export function Body() {
+	const [tasks, setTasks] = useState<string[]>([])
+
 	function handleSubmit(task: string) {
-		console.log('Task: ', task)
+		setTasks(prev => [...prev, task])
 	}
 	return (
 		<Container>
 			<Input onSubmit={handleSubmit} />
-			<Tasks />
+			<Tasks tasks={tasks} />
 		</Container>
 	)
 }
