@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react'
 
-import { InputContainer } from './style'
+import { FormContainer } from './style'
 
 interface InputProps {
 	onSubmit: (task: string) => void
@@ -17,7 +17,7 @@ export function Input({ onSubmit }: InputProps) {
 	}
 
 	return (
-		<InputContainer onSubmit={handleSubmit}>
+		<FormContainer onSubmit={handleSubmit}>
 			<input
 				name='task'
 				type='text'
@@ -29,6 +29,6 @@ export function Input({ onSubmit }: InputProps) {
 			<button type='submit'>
 				Criar <img src='/plus.svg' alt='Criar' />
 			</button>
-		</InputContainer>
+		</FormContainer>
 	)
 }

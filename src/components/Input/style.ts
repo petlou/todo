@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const InputContainer = styled.form`
+export const FormContainer = styled.form`
 	display: flex;
 	gap: 0.5rem;
 	width: 100%;
@@ -34,7 +34,7 @@ export const InputContainer = styled.form`
 
 		background-color: var(--blue-dark);
 		color: var(--gray-100);
-		border: 1px solid black;
+		border: 1px solid black; // Adicionei borda no botão para remover a impressão de que o botão era maior que o input
 
 		border-radius: 0.5rem;
 

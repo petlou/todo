@@ -1,4 +1,5 @@
 import { Input } from '../Input'
+import { Tasks } from '../Tasks'
 import { Container } from './style'
 
 export function Body() {
@@ -8,6 +9,7 @@ export function Body() {
 	return (
 		<Container>
 			<Input onSubmit={handleSubmit} />
+			<Tasks />
 		</Container>
 	)
 }

@@ -5,6 +5,7 @@ export const Container = styled.section`
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
+	gap: 4rem;
 
 	max-width: 46rem;
 
